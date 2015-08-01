@@ -70,5 +70,65 @@ namespace FixBXFAsRun.Properties {
                 this["Milliseconds"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public int Hour {
+            get {
+                return ((int)(this["Hour"]));
+            }
+            set {
+                this["Hour"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Compute {
+            get {
+                return ((bool)(this["Compute"]));
+            }
+            set {
+                this["Compute"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool WriteStart {
+            get {
+                return ((bool)(this["WriteStart"]));
+            }
+            set {
+                this["WriteStart"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SchedStart {
+            get {
+                return ((bool)(this["SchedStart"]));
+            }
+            set {
+                this["SchedStart"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SchedEnd {
+            get {
+                return ((bool)(this["SchedEnd"]));
+            }
+            set {
+                this["SchedEnd"] = value;
+            }
+        }
     }
 }
