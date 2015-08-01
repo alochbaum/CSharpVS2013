@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FixBXFAsRun.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SourceDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\BXFAsRun\B4Processing</Value>
+    </Setting>
+    <Setting Name="DestinationDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\BXFAsRun\Processed</Value>
+    </Setting>
+    <Setting Name="RejectedDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\BXFAsRun\Rejected</Value>
+    </Setting>
+    <Setting Name="Milliseconds" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">180000</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
