@@ -109,7 +109,7 @@ namespace FixBXFAsRun.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool SchedStart {
             get {
                 return ((bool)(this["SchedStart"]));
@@ -121,7 +121,7 @@ namespace FixBXFAsRun.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool SchedEnd {
             get {
                 return ((bool)(this["SchedEnd"]));
