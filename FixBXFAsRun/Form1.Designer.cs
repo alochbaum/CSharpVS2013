@@ -159,15 +159,15 @@
             this.cbWriteStart.AutoSize = true;
             this.cbWriteStart.Location = new System.Drawing.Point(17, 209);
             this.cbWriteStart.Name = "cbWriteStart";
-            this.cbWriteStart.Size = new System.Drawing.Size(124, 17);
+            this.cbWriteStart.Size = new System.Drawing.Size(154, 17);
             this.cbWriteStart.TabIndex = 19;
-            this.cbWriteStart.Text = "Set Write Date/Time";
+            this.cbWriteStart.Text = "Write BXF Msg  Date/Time";
             this.cbWriteStart.UseVisualStyleBackColor = true;
             // 
             // cbSchedStart
             // 
             this.cbSchedStart.AutoSize = true;
-            this.cbSchedStart.Location = new System.Drawing.Point(157, 209);
+            this.cbSchedStart.Location = new System.Drawing.Point(174, 209);
             this.cbSchedStart.Name = "cbSchedStart";
             this.cbSchedStart.Size = new System.Drawing.Size(115, 17);
             this.cbSchedStart.TabIndex = 19;
@@ -177,7 +177,7 @@
             // cbSchedEnd
             // 
             this.cbSchedEnd.AutoSize = true;
-            this.cbSchedEnd.Location = new System.Drawing.Point(278, 209);
+            this.cbSchedEnd.Location = new System.Drawing.Point(295, 209);
             this.cbSchedEnd.Name = "cbSchedEnd";
             this.cbSchedEnd.Size = new System.Drawing.Size(112, 17);
             this.cbSchedEnd.TabIndex = 19;

@@ -103,9 +103,20 @@ namespace FixBXFAsRun
                 XmlNode xmlNde = doc.DocumentElement.SelectSingleNode("//deBXF:Schedule", nsmgr);
                 if (xmlNde != null)
                 {
-                    xmlNde.Attributes["scheduleStart"].Value = dtIncoming.ToString("yyyy-MM-ddThhmmssZ");
-                    dtIncoming =  dtIncoming.AddDays(1.0);
-                    xmlNde.Attributes["scheduleEnd"].Value = dtIncoming.ToString("yyyy-MM-ddThhmmssZ");
+                    // writing start if checked
+                    if(cbSchedStart.Checked) xmlNde.Attributes["scheduleStart"].Value = dtIncoming.ToString("yyyy-MM-ddThhmmssZ");
+                    DateTime dtEnd =  dtIncoming.AddDays(1.0);
+                    // writing end if checked
+                    if (cbSchedEnd.Checked) xmlNde.Attributes["scheduleEnd"].Value = dtEnd.ToString("yyyy-MM-ddThhmmssZ");
+                }
+                if (cbWriteStart.Checked)
+                {
+                    XmlNode xmlNdeBXF = doc.DocumentElement.SelectSingleNode("//deBXF:BxfMessage", nsmgr);
+                    if(xmlNdeBXF!= null)
+                    {
+                        DateTime dtEnd = dtIncoming.AddDays(1.0);
+                        xmlNdeBXF.Attributes["dateTime"].Value = dtEnd.ToString("yyyy-MM-ddThhmmssZ");
+                    }
                 }
                 doc.Save(strNewPath);
             }
@@ -145,9 +156,33 @@ namespace FixBXFAsRun
                 if (xmlNde != null)
                 {
                     // getting date in form yyyyMMdd from broadcastDate attribute, getting hour as hh from first 2 characters of InnerText
-                    string strTemp = xmlNde.Attributes["broadcastDate"].Value + " " + xmlNde.InnerText.ToString().Substring(0, 2)+":00:00";
-                    richTextBox1.Text += strTemp + "\r\n";
-                    dtReturn = DateTime.ParseExact(strTemp, "yyyy-MM-dd hh:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None);
+                    if (cbHourFromFile.Checked)
+                    {
+                        // this is formula for get hour from node
+                        string strTemp = xmlNde.Attributes["broadcastDate"].Value + " " + xmlNde.InnerText.ToString().Substring(0, 2) + ":00:00";
+                        richTextBox1.Text += strTemp + "\r\n";
+                        dtReturn = DateTime.ParseExact(strTemp, "yyyy-MM-dd hh:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None);
+                    }
+                    else
+                    {
+                        string strTemp;
+                        // this is formula for uses hour entered in form
+                        if (tbHour.ToString().Length == 2)
+                        {
+                            strTemp = xmlNde.Attributes["broadcastDate"].Value + " " + tbHour.ToString() + ":00:00";
+                        }
+                        else if (tbHour.ToString().Length == 1)
+                        {
+                            strTemp = xmlNde.Attributes["broadcastDate"].Value + " 0" + tbHour.ToString() + ":00:00";
+                        }
+                        else
+                        {
+                            strTemp = xmlNde.Attributes["broadcastDate"].Value + " 08:00:00";
+                        }
+                        richTextBox1.Text += strTemp + "\r\n";
+                        dtReturn = DateTime.ParseExact(strTemp, "yyyy-MM-dd hh:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None);
+
+                    }
                 }
                 else { richTextBox1.Text += "Error couldn't find node\r\n"; }
                 doc.Save(strInFile);
